@@ -1,3 +1,5 @@
+import NotFound from "@/app/not-found";
+
 type Props = {
   params: {
     productId: string;
@@ -7,6 +9,10 @@ type Props = {
 
 function ReviewDetails({ params }: Props) {
   const { productId, reviewId } = params;
+
+  if (+reviewId > 100) {
+    return <NotFound />;
+  }
 
   return (
     <div>
