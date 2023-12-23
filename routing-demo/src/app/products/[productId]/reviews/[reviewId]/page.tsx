@@ -6,10 +6,12 @@ type Props = {
 };
 
 function ReviewDetails({ params }: Props) {
+  const { productId, reviewId } = params;
+
   return (
     <div>
-      <h2>Product {params.productId}</h2>
-      <h2>Review {params.reviewId}</h2>
+      <h2>Product {productId}</h2>
+      <h2>Review {reviewId}</h2>
     </div>
   );
 }
