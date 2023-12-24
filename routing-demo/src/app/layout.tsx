@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    absolute: "",
+    // absolute: "",
     default: "NextJS Tutorial - Codevolution",
     template: "%s | Codevolution",
   },
