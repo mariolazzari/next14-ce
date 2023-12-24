@@ -1,5 +1,11 @@
 import NotFound from "@/app/not-found";
 
+const getRandom = (count: number) => {
+  const num = Math.random() * count;
+
+  return Math.floor(num);
+};
+
 type Props = {
   params: {
     productId: string;
@@ -9,6 +15,13 @@ type Props = {
 
 function ReviewDetails({ params }: Props) {
   const { productId, reviewId } = params;
+
+  const random = getRandom(2);
+  if (random === 1) {
+    throw new Error("Error loading reviews");
+  }
+
+  console.log(random);
 
   if (+reviewId > 100) {
     return <NotFound />;
