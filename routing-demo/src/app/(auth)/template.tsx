@@ -17,7 +17,9 @@ function RootLayout({ children }: Props) {
 
   return (
     <div>
-      <h2>Inner layout</h2>
+      <h2>Template</h2>
+
+      <input />
 
       <div>
         {links.map(link => {
