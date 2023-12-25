@@ -1,3 +1,4 @@
+"use client";
 import NotFound from "@/app/not-found";
 
 const getRandom = (count: number) => {
@@ -20,8 +21,6 @@ function ReviewDetails({ params }: Props) {
   if (random === 1) {
     throw new Error("Error loading reviews");
   }
-
-  console.log(random);
 
   if (+reviewId > 100) {
     return <NotFound />;
