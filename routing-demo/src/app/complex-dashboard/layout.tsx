@@ -11,10 +11,18 @@ type Props = {
   notifications: ReactNode;
   revenue: ReactNode;
   users: ReactNode;
+  login: ReactNode;
 };
 
-function ComplexLayout({ children, notifications, revenue, users }: Props) {
-  return (
+function ComplexLayout({
+  children,
+  notifications,
+  revenue,
+  users,
+  login,
+}: Props) {
+  const isLoggedIn = false;
+  return isLoggedIn ? (
     <div>
       <h1>{children}</h1>
       <div style={{ display: "flex" }}>
@@ -25,6 +33,8 @@ function ComplexLayout({ children, notifications, revenue, users }: Props) {
         <div style={{ display: "flex", flex: 1 }}>{notifications}</div>
       </div>
     </div>
+  ) : (
+    { login }
   );
 }
 
