@@ -1,4 +1,6 @@
-export const comments = [
+import { Comment } from "@/types/Comment";
+
+export let comments: Comment[] = [
   {
     id: 1,
     text: "This is the first comment",
