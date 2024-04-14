@@ -1,10 +1,15 @@
 import { NextRequest } from "next/server";
 import { comments } from "./data";
 import { Comment } from "@/types/Comment";
+import { headers, cookies } from "next/headers";
 
 type CommentBody = Pick<Comment, "text">;
 
 export async function GET(req: NextRequest) {
+  const reqHeaders = headers();
+  const token = reqHeaders.get("authorization");
+  cookies().set("token", token ?? "");
+
   const { searchParams } = req.nextUrl;
   const query = searchParams.get("query");
   if (query) {

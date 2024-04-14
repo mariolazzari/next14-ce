@@ -1,6 +1,7 @@
 import { comments } from "../data";
 import { Comment } from "@/types/Comment";
 import { redirect } from "next/navigation";
+import { headers } from "next/headers";
 
 type CommentBody = Pick<Comment, "text">;
 type Context = {
