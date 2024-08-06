@@ -1,4 +1,4 @@
-"use theme";
+"use client";
 
 import { createContext, ReactNode, useContext } from "react";
 
