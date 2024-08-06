@@ -1,7 +1,16 @@
 import { User } from "@/types/User";
 
 async function UsersPage() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  // fake delay
+  await new Promise(resolve => setTimeout(resolve, 2000));
+
+  // fetch users
+  const res = await fetch("https://jsonplaceholder.typicode.com/users1");
+
+  if (!res.ok) {
+    throw new Error(res.statusText);
+  }
+
   const users: User[] = await res.json();
 
   return (
