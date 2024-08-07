@@ -5,12 +5,10 @@ async function UsersPage() {
   await new Promise(resolve => setTimeout(resolve, 2000));
 
   // fetch users
-  const res = await fetch("https://jsonplaceholder.typicode.com/users1");
-
+  const res = await fetch("https://jsonplaceholder.typicode.com/users");
   if (!res.ok) {
     throw new Error(res.statusText);
   }
-
   const users: User[] = await res.json();
 
   return (
