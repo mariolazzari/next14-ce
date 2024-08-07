@@ -2,7 +2,10 @@ import { Product } from "@/types/Product";
 
 async function ProductsPage() {
   const res = await fetch("http://localhost:3001/products", {
-    cache: "no-store",
+    // cache: "no-store", // avoid caching
+    next: {
+      revalidate: 10, // revalidate every 10 seconds
+    },
   });
   if (!res.ok) {
     throw new Error(`Error fetching products: ${res.statusText}`);
